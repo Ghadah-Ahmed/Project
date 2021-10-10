@@ -31,6 +31,7 @@ body, h1{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #28694c;
 }
 
 ul{
@@ -469,6 +470,7 @@ table {
     }
     .mobile-view-only{
         height: 106vh;
+        display: block;
     }
     .welcome h1{
         font-size: 40px;
@@ -483,9 +485,7 @@ table {
         top: -45px;
         text-align: center;
     }
-    .mobile-view-only{
-        display: block;
-    }
+
     .welcome{
         position: relative;
         top: -50px;
