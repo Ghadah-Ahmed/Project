@@ -1,0 +1,306 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- font-awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            background-color: #fffcf6;
+            height: 155vh;
+        }
+        aside{
+            background-color: #eee9e0;
+            width: 35%;
+            /* height: 140vh; */
+            border-left: 1px solid rgba(128, 128, 128, 0.171);
+            padding: 5% 10% 5% 5%;
+        }
+        section{
+            width: 50%;
+            /* height: 140vh; */
+            order: -1;
+            padding: 3% 7% 3% 13%;
+        }
+        table{
+            width: 100%;
+        }
+        td{
+            border-bottom: 1px solid rgba(128, 128, 128, 0.171);
+            padding: 20px 0;
+        }
+        .td{
+            border-bottom: none;
+        }
+        th{
+            text-align: left;
+            padding: 20px 0;
+        }
+        td:nth-child(even), th:nth-child(even) {
+            text-align: right;
+        }
+        img{
+            width: 50px;
+        }
+        #name{
+            position: relative;
+            top: -20px;
+        }
+        #quantity{
+            background-color: #8b8787;
+            border-radius: 50%;
+            padding: 2px 7px;
+            position: relative;
+            bottom: 40px;
+            right: 20px;
+            color: white;
+        }
+        #discount{
+            width: 100%;
+            padding: 15px 10px;
+            color: #4f4d4a;
+            border: 1px solid rgba(128, 128, 128, 0.384);
+            border-radius: 5px;
+        }
+        #apply{
+            width: 100%;
+            padding: 15px 10px;
+            color: white;
+            border: 1px solid rgba(128, 128, 128, 0.384);
+            border-radius: 5px;
+            background-color: #8b8787b6;
+        }
+        form input[type='text'], input[type='email'], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        p{
+            margin: 30px 0;
+        }
+        .devide{
+            display: flex;
+        }
+        .devide input:nth-child(1), .devide select:nth-child(1){
+            margin-right: 10px;
+        }
+        h3, label{
+            color: #383736;
+            font-weight: normal;
+        }
+        .radio{
+            background-color: white;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            color: #383736;
+        }
+        hr{
+            border: 0.5px solid rgba(128, 128, 128, 0.384);
+            border-bottom: none;
+        }
+        .button {
+            padding: 15px;
+            color: rgba(255, 255, 255);
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #127448de;
+            letter-spacing: 6px;
+            display: block;
+            border: none;
+            margin-right: 10px;
+        }
+        .button:hover{
+            background-color: olive;
+        }
+        a{
+            color: #eb174f;
+            text-decoration: none;
+        }
+        .thanks{
+            display: flex;
+            position: relative;
+            right: 75px;
+        }
+        .thanks h2{
+            font-weight: normal;
+            margin-top: 0;
+        }
+        .thanks p{
+            margin-bottom: 5px;
+        }
+        .icon{
+            width: 45%;
+            margin-top: 10px; 
+            display: flex; 
+            align-items: center; 
+            color: #eb174f; 
+            justify-content: space-around;
+        }
+        .radio h4{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <table>
+              <tr>
+                  <td><input id="discount" type="text" placeholder="Discount code"></td>
+                  <td><button onclick="apply(discount.value)" id="apply">Apply</button></td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 0; color: #4f4d4a;" class="td">Subtotal </td>
+                <td id="subtotal" style="padding-bottom: 0;" class="td">0$ </td>
+              </tr>
+              <tr>
+                <td style="padding: 4px 0; color: #4f4d4a;" class="td" >VAT </td>
+                <td id="vat" style="padding: 4px 0;" class="td">0$</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 0px; color: #4f4d4a;">Shipping </td>
+                <td style="padding-top: 0px;"><span id="shipping">0</span>$</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <th id="total" style=" font-size: x-large;">0$</th>
+              </tr>
+        </table>
+    </aside>
+
+    <section class="checkout">
+
+        <h1>Starbucks</h1>
+        <p><span style="color: #eb174f;" >Cart</span> &nbsp>&nbsp Shipping & Payment  </span></p>
+
+        <form action="/action_page.php">
+
+            <h3>Contact information</h3>
+            <input type="email" id="email" placeholder="Email">
+            <input type="checkbox" >
+            <label for="checkbox"> Email me with news and offers.</label><br><br>
+
+            <h3>Shipping adress</h3>
+
+        <div class="devide">
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </div>
+       
+        <input type="text" id="adress"  placeholder="Adress">
+        <input type="text" id="adress2"  placeholder="Apartment, suit, etc. (Optional)">
+        <input type="text" id="city"  placeholder="City">
+
+
+            <div class="devide">
+                <select id="country" name="country">
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                  </select>
+                  <select id="city" name="city">
+                    <option value="Riyadh">Riyadh</option>
+                    <option value="Qassim">Qassim</option>
+                    <option value="Mekkah">Mekkah</option>
+                  </select>
+            </div>    
+            <input type="text" id="phone" placeholder="Phone">
+            <input type="checkbox" >
+            <label for="checkbox"> Save this information for next time.</label><br><br>
+            <h3>Shipping method</h3>
+
+            <div  class="radio">
+                <div>
+                    <input onchange="changeShipping(10)" type="radio" id="age2" name="age" value="60">
+                    <label for="age2">Quick delivey (4-3 days)</label><br>  
+                </div>
+                <hr>
+                <div>
+                    <input onchange="changeShipping(0)" type="radio" id="age3" name="age" value="100">
+                    <label for="age3">Normal delivey (10-14 days)</label>
+                </div>
+            </div>
+            <h3 style="margin-bottom: 0;">Payment</h3>
+            <label for="age3">All transactions are secre and encrypted.</label><br><br>
+            <div  class="radio">Cash On Delivery (COD) </div>
+
+
+
+            <div style="display: flex; align-items: center ; margin-top: 50px; ">
+                <a class="button" onclick="order()" value="">COMPLETE ORDER</a>
+                <a href="index.html">Return to shopping</a>
+            </div>
+    </form> 
+
+    </section>
+
+    
+    <script src="main.js"></script>
+    <script>
+        let shipping = parseInt(document.getElementById("shipping").innerHTML);
+        let totalP;
+
+        function fetchItem(){
+    for (var key in localStorage) {
+        if (JSON.parse(localStorage.getItem(`${key}`))  !== null  ){
+            var item = JSON.parse(localStorage.getItem(`${key}`))
+            var tr = document.createElement("TR")
+            tr.innerHTML = `
+            <tr>
+            <td><img src="${item.img}" alt=""> <span id="quantity">${item.quantity}</span> <span id="name">${item.name}</span>  </td>
+            <td>${item.total}$ </td>
+            </tr>
+            `
+            table = document.querySelector('table')
+            table.insertBefore(tr, table.firstElementChild);
+        }
+    }
+}
+fetchItem()
+
+function changeShipping(price){
+    document.getElementById("shipping").innerHTML = price
+    shipping = price
+    total(shipping)
+}
+
+function total(shipping){
+    subtotal = 0;
+    for (var key in localStorage) {
+        if (JSON.parse(localStorage.getItem(`${key}`))  !== null  ){
+            var item = JSON.parse(localStorage.getItem(`${key}`))
+            subtotal += item.total
+            document.getElementById("subtotal").innerHTML = `${subtotal}$`
+            let vat = subtotal * (15/100)
+            document.getElementById("vat").innerHTML = `${vat}$`
+            totalP = vat + subtotal + shipping
+            document.getElementById("total").innerHTML = `${totalP.toFixed(2)}$`
+        }
+    }
+}
+total(0)
+
+function apply(code){
+if (code === '40%discount'){
+    document.getElementById("total").innerHTML = `${(totalP * (1 - (40/100))).toFixed(2)}$`
+
+}else{
+    document.getElementById("total").innerHTML = `${totalP.toFixed(2)}$`
+}
+}
+    </script>
+</body>
+</html>

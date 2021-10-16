@@ -1,0 +1,279 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+            <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="style.css">
+        <style>
+        .intro div{
+            display: none;
+        }
+        #shopping-cart{
+            text-align: center;
+            padding: 5% 15% 0;
+        }
+        .table-div{
+            overflow-x: auto;
+        }
+        table{
+            color: black;
+        }
+        td:nth-child(even), th:nth-child(even) {
+              text-align: left;
+        }
+        input[type='number']{
+            width: 50px;
+            padding: 5px 10px;
+        }
+        td span{
+            position: relative;
+            top: -35px
+        }
+        td, th{
+            padding: 15px;
+        }
+        td img{
+            margin-right: 25px;
+            width: 100px;
+        }
+        .par {
+            text-align: left;
+            font-size: larger;
+            margin-bottom: 5%;
+            font-weight: bold;
+            color: #127448de;
+        }
+        tr td:nth-child(1) {
+             display: flex;
+             align-items: flex-start;
+        }
+        .checkout{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .checkout span{
+            display: inline-block;
+            font-style: italic;
+            margin: 25px 0 5px;
+        }
+        .checkout a{
+            color: #000;
+        }
+        .button{
+            order: 1;
+        }
+        .button a{
+            margin: 5% auto;
+            padding: 15px 45px;
+            color: rgba(255, 255, 255);
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #127448de;
+            letter-spacing: 6px;
+            display: block;
+            width: 200px; 
+        }
+        .button a:hover{
+            background-color: olive;
+        }
+        .anchors{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 30px 30px 0;
+        }
+        .anchors a:hover{
+            color: #127448de;
+        }
+        ul{
+            margin: 16px;
+        }
+
+
+        @media (max-width: 767px) {
+            nav{
+                display: none;
+            }
+            .intro div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3% 5%;
+            }
+            .svg-2{
+                position: relative;
+                top: -1px
+            }
+            .checkout{
+                display: block;
+            }
+            #shopping-cart {
+                padding: 15% ;
+            }
+        }
+
+        </style>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="intro">
+        <nav  data-aos="fade-down" data-aos-duration="1000">
+            <ul>
+                <a href="index.html"><img src="images/pngegg.png" alt="" width="50px"></a>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#second-section">MENU</a></li>
+                <li>GIFT CARDS</li>
+                <li> <a href="shoppingCart.html">&#10037; SHOPPING CART</a></li>
+            </ul>
+        </nav>
+            <div>
+                <img src="images/pngegg.png" alt="" width="50px">
+                <i onclick="myMenu2()" style="font-size:25px; color: white;" class="fa">&#xf0c9;</i>
+            </div>
+            <ul style="display: block;" class="mobile-nav">
+                <li style="margin-top: 30px;"><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#second-section">MENU</a></li>
+                <li>GIFT CARDS</li>
+                <li> <a href="shoppingCart.html">&#10037; SHOPPING CART</a></li>
+              </ul>
+    </div>
+    <!-- <div style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#127448" fill-opacity="1" d="M0,96L16,128C32,160,64,224,96,224C128,224,160,160,192,144C224,128,256,160,288,160C320,160,352,128,384,117.3C416,107,448,117,480,149.3C512,181,544,235,576,218.7C608,203,640,117,672,69.3C704,21,736,11,768,32C800,53,832,107,864,133.3C896,160,928,160,960,149.3C992,139,1024,117,1056,138.7C1088,160,1120,224,1152,240C1184,256,1216,224,1248,181.3C1280,139,1312,85,1344,85.3C1376,85,1408,139,1424,165.3L1440,192L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z"></path>
+          </svg>
+          <svg style=" transform: scaleX(-1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#127448" fill-opacity="1" d="M0,96L16,128C32,160,64,224,96,224C128,224,160,160,192,144C224,128,256,160,288,160C320,160,352,128,384,117.3C416,107,448,117,480,149.3C512,181,544,235,576,218.7C608,203,640,117,672,69.3C704,21,736,11,768,32C800,53,832,107,864,133.3C896,160,928,160,960,149.3C992,139,1024,117,1056,138.7C1088,160,1120,224,1152,240C1184,256,1216,224,1248,181.3C1280,139,1312,85,1344,85.3C1376,85,1408,139,1424,165.3L1440,192L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z"></path>
+          </svg>
+    </div> -->
+
+    <section id="shopping-cart">
+
+        <h1>Shopping Cart</h1>
+        <hr>
+
+        <p class="par">Prefer to call in your order? Simply contact us on 02 447 5612 and we’ll arrange everything for you        </p>
+    <div class="table-div">
+        <table>
+            <tr>
+              <th  style="width:50%" >ITEM</th>
+              <th>PRICE</th>
+              <th>QTY</th>
+              <th>TOTAL</th>
+              <th></th>
+            </tr>
+
+
+              <tr>
+                    <td height='50px'></td>
+                    <td></td>  
+                    <td style="text-align: right;">SUBTOTAL</td>
+                    <td id="subtotal">0$</td>
+                    <td></td>
+              </tr>
+          </table>
+        </div>
+
+          <div class="checkout">
+              <div class="button">
+                  <span>Excluding tax & shipping</span><br>
+                  <a href="checkout.html">CHECKOUT</a>
+              </div>
+              <div class="anchors">
+                <a href="">Update Subtotal</a> <br>
+                <a href="index.html#second-section">Continue Shopping</a>
+            </div>
+          </div>
+
+    </section>
+
+     <section class="third-section">
+       <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L17.1,74.7C34.3,85,69,107,103,117.3C137.1,128,171,128,206,144C240,160,274,192,309,186.7C342.9,181,377,139,411,122.7C445.7,107,480,117,514,128C548.6,139,583,149,617,176C651.4,203,686,245,720,224C754.3,203,789,117,823,117.3C857.1,117,891,203,926,245.3C960,288,994,288,1029,266.7C1062.9,245,1097,203,1131,192C1165.7,181,1200,203,1234,208C1268.6,213,1303,203,1337,170.7C1371.4,139,1406,85,1423,58.7L1440,32L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z"></path></svg>
+
+       <div class="footer-div">
+        <img class="white-logo" src="images/pngaaa.com-2563067.png" alt="">
+        <h2>SIGN UP FOR OUR NEWSLETTER</h2>
+        <p>We'd love to stay in touch. <br> Be the first to hear news of all things
+            Starbucks by leaving your email below</p>
+        <form action="">
+            <input type="text">
+            <input type="submit" value="SIGN UP">
+        </form>
+
+        <ul>
+            <i class="fa"><a href="https://www.instagram.com/">&#xf16d;</a></i>
+            <i class="fa"><a href="https://www.facebook.com/">&#xf082;</a></i>
+            <i class="fa"><a href="https://www.whatsapp.com/">&#xf232;</a></i>
+        </ul>
+
+        <hr>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="index.html#second-section">MENU</a></li>
+            <li><a>GIFTS</a></li>
+            <li><a href="shoppingCart.html">CART</a></li>
+        </ul>
+        <span style="margin-top: 5px; display: block;">© 2021 Starbucks.</span>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        function fetchItem(){
+    for (var key in localStorage) {
+        if (JSON.parse(localStorage.getItem(`${key}`))  !== null  ){
+            var item = JSON.parse(localStorage.getItem(`${key}`))
+            var tr = document.createElement("TR")
+            tr.innerHTML = `
+            <tr>
+            <td><img src="${item.img}"  alt="">${item.name}</td>
+            <td><span>${item.price}$</span></td>
+            <td><span><input type="number" value='${item.quantity}' min="1" max="5" onchange="update('${key}', this.value )"></span></td>
+            <td><span>${item.total}$ </span></td>
+            <td style="text-align: right;"><span onclick="deleteItem(this, '${key}')">X</span></td>
+            </tr>
+            `
+            tbody = document.getElementById('shopping-cart').querySelector('tbody')
+            tbody.insertBefore(tr, tbody.firstElementChild.nextSibling);
+            subtotal += item.total
+            document.getElementById("subtotal").innerHTML = `${subtotal}$`
+        }
+    }
+}
+fetchItem()
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+<div class="content-box">
+    <div class="content-box__row content-box__row--no-padding">
+  <div class="map default-background" role="region" aria-label="Google map displaying pin point of shipping address: Riyadh, Dubai">
+    <iframe src="https://checkout.shopify.com/13524579/sandbox/google_maps?locale=en" class="map__iframe" data-google-maps="" data-google-maps-marker="[{&quot;type&quot;:&quot;shipping&quot;,&quot;image&quot;:&quot;\/\/cdn.shopify.com\/shopifycloud\/shopify\/assets\/checkout\/shipping-location-pin-6eb96b6a10d2ab4d1c0d55219edd65c905343fd60d2ded24a26c03a368597405.svg&quot;,&quot;title&quot;:&quot;Shipping address&quot;,&quot;position&quot;:{&quot;lat&quot;:24.3171389,&quot;lng&quot;:54.6495842},&quot;marker&quot;:true,&quot;lat&quot;:24.3171389,&quot;lng&quot;:54.6495842,&quot;label&quot;:&quot;Riyadh, Dubai&quot;}]" title="Google map displaying pin point of shipping address: Riyadh, Dubai">
+    </iframe>
+  </div>
+</div>
+
+<div class="content-box__row text-container">
+  <h2 class="heading-2 os-step__title">Your order is confirmed</h2>
+    <div class="os-step__special-description">
+      <p class="os-step__description">
+        You’ll receive a confirmation email with your order number shortly.
+      </p>
+    </div>
+  
+</div>
+</div> -->

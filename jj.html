@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    margin: 0;
+    background-color: white;
+    transition: 1s ease;
+}
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  top: 0;
+  /* background-color:darkolivegreen; */
+  overflow: hidden;
+  width: 0;
+  height:100%;
+  transition: .5s linear;
+}
+
+.overlay2 {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  top: 0;
+  overflow: hidden;
+  width: 0;
+  height:100%;
+  transition: .5s linear;
+  /* background-color: darkcyan; */
+}
+/* .container:hover .overlay2 {
+  right: 0;
+  width: 100vw;
+} */
+
+
+/* .container:hover .overlay {
+  right: 0;
+  width: 100vw;
+} */
+
+.text {
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+ <!-- <div class="overlay2"><div style="color:darkolivegreen" class="text">Hello  </div></div> -->
+ <div class="overlay"><div style="background-color:darkolivegreen" class="text2"></div></div>
+
+ <!-- <div class="overlay2"><div style="color:darkred" class="text">Hello</div></div> -->
+ <div class="overlay"><div style="background-color:darkred" class="text2"></div></div>
+
+ <!-- <div class="overlay2"><div style="color:darkslateblue" class="text">Hello</div></div> -->
+ <div class="overlay"><div style="background-color:darkslateblue" class="text2"></div></div>
+
+</div>
+
+<button onclick="move()">Click me</button>
+ 
+<script>
+    let count = 0;
+    let num = '100%'
+
+   function move(){
+     count++
+
+
+
+if (count == 1){
+    
+
+    document.getElementsByClassName("overlay")[0].style = `
+     right: 0;
+     width: 100vw;`
+
+
+}else if(count == 2){
+
+
+    document.getElementsByClassName("overlay")[0].style = `
+     right: ${num};
+     width: 0`
+
+
+    document.getElementsByClassName("overlay")[1].style = `
+     right: 0;
+     width: 100vw;`
+
+    
+}else if(count == 3){
+
+    document.getElementsByClassName("overlay")[1].style = `
+     right: ${num};
+     width: 0`
+
+    document.getElementsByClassName("overlay")[2].style = `
+     right: 0;
+     width: 100vw;`
+     num = '0px'
+
+}else{
+
+    count = 0;
+     document.getElementsByClassName("overlay")[0].style = `
+     right: 0;
+     width: 0;`
+     document.getElementsByClassName("overlay")[1].style = `
+     right: 0;
+     width: 0;`
+     document.getElementsByClassName("overlay")[2].style = `
+     right: 0;
+     width: 0;`
+     num = '100%'
+}
+
+     
+   }
+
+</script>
+</body>
+</html>
