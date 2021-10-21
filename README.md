@@ -30,7 +30,8 @@ https://user-images.githubusercontent.com/75578380/138247965-de497758-5caf-4609-
 
 ##  My Design Goal
 
+https://www.pinterest.com/pin/387168899225646726/
+
 ## Github Pages
 
-
-
+https://ghadah-ahmed.github.io/Project/
