@@ -18,7 +18,15 @@ A modern design for starbucks, using local storage to immitate the connection wi
 
 ## Desktop
 
+
+https://user-images.githubusercontent.com/75578380/138247949-ffd10a94-81da-4106-b028-bb59294989c7.mp4
+
+
 ## Mobile
+
+
+https://user-images.githubusercontent.com/75578380/138247965-de497758-5caf-4609-bc18-40b5adff2bc3.mp4
+
 
 ##  My Design Goal
 
